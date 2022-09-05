@@ -67,6 +67,8 @@ systemctl enable acpid
 # Install yay AUR helper
 mkdir yay && git clone https://aur.archlinux.org/yay.git ./yay && pushd yay && makepkg -si --noconfirm && popd
 
+yay -S mangohud --noconfirm
+
 # Desktop enviorment intallation
 while true; do
 	read -p "What DE would you like to install? 1; KDE 2; Gnome 3; XFCE 4; MATE (Please choose KDE)	" DE
