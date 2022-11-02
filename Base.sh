@@ -1,7 +1,7 @@
 #! /bin/bash
 
-source WinePackages
-source Base_OS_Packages
+source WinePackages.sh
+source Base_OS_Packages.sh
 
 
 ln -sf /usr/share/zoneinfo/Europe/Budapest /etc/localtime
@@ -71,10 +71,11 @@ yay -S mangohud --noconfirm
 
 # Desktop enviorment intallation
 while true; do
-	read -p "What DE would you like to install? 1; KDE 2; Gnome 3; XFCE 4; MATE (Please choose KDE)	" DE
+	read -p "What DE would you like to install? 1; KDE 2; Sway 3; Gnome 4; XFCE 5; MATE (Please choose KDE or Sway)	" DE
 	case $DE in
 		[1]* ) ./KDE.sh; break;;
-		* ) echo "please choose KDE the others are work in progress.";;
+    [2]* ) ./SWAY.sh; break;;
+		* ) echo "please choose KDE or Sway the others are work in progress.";;
 	esac
 done
 
